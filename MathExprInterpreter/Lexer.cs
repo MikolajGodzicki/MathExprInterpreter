@@ -59,6 +59,16 @@ namespace MathExprInterpreter {
                     tokens.Add(divideToken);
                     Advance();
                 }
+                else if (curChar == '^') {
+                    Token powerToken = new Token(EToken.Power, null);
+                    tokens.Add(powerToken);
+                    Advance();
+                }
+                else if (curChar == '#') {
+                    Token rootToken = new Token(EToken.Root, null);
+                    tokens.Add(rootToken);
+                    Advance();
+                }
                 else if (curChar == '(') {
                     Token leftBracketToken = new Token(EToken.LeftBracket, null);
                     tokens.Add(leftBracketToken);

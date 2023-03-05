@@ -14,6 +14,9 @@ namespace MathExprInterpreter.Tokens
         Minus, // -
         Multiply, // *
         Divide, // \
+        
+        Power, // ^
+        Root, // #
 
         LeftBracket, // (
         RightBracket, // )

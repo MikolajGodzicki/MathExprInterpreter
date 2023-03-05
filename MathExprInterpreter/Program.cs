@@ -12,6 +12,10 @@ namespace MathExprInterpreter {
                     string? tInput = Console.ReadLine();
                     string input = tInput != null ? tInput : String.Empty;
 
+                    if (input == "exit") {
+                        Environment.Exit(0);
+                    }
+
                     Lexer lexer = new Lexer(input);
                     Parser parser = new Parser(lexer.GetTokens());
 
@@ -21,9 +25,7 @@ namespace MathExprInterpreter {
                     }
                     Console.WriteLine(obj.Evaluate());
 
-                    if (input == "exit") {
-                        Environment.Exit(0);
-                    }
+                    
                 } catch (Exception e) {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ForegroundColor = ConsoleColor.White;
